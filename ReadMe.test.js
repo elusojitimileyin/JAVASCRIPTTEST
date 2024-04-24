@@ -1,4 +1,4 @@
-let {testScoresArray, upGradeScore,squareNumber,shareBooks,davidMonthlyExpenses,scheduleAfternoonClasses} = require("./ReadMe.js")
+let {testScoresArray, upGradeScore,squareNumber,shareBooks,davidMonthlyExpenses,scheduleAfternoonClasses,mapHealthyAndUnHealthy} = require("./ReadMe.js")
 
 test("filter to check testscores  ", () =>{
     let score = [85, 92, 78, 88, 95, 50, 20, 40, 34, 70];
@@ -61,4 +61,32 @@ test(" test for classes offered in the afternoon ", () =>{
     let result = ["1:00 PM", "3:00 PM", "5:00 PM"]
     let answer = scheduleAfternoonClasses(classTime);
     expect(answer).toEqual(result) 
+})
+
+test(" test for classes offered in the afternoon ", () =>{ 
+    const shoppingList = [
+         { name: 'Apples', category: 'Fruits', isHealthy: true },
+         { name: 'Potato Chips', category: 'Snacks', isHealthy: false },
+         { name: 'Carrots', category: 'Vegetables', isHealthy: true },
+         { name: 'Chocolate Bars', category: 'Sweets', isHealthy: false },
+         { name: 'Greek Yogurt', category: 'Dairy', isHealthy: true },
+         { name: 'Soda', category: 'Beverages', isHealthy: false }
+        ];
+
+        let answer = mapHealthyAndUnHealthy(shoppingList)
+
+        let isHealthy = [
+            {name: 'Apples', category: 'Fruits', isHealthy: true},
+            {name: 'Carrots', category: 'Vegetables', isHealthy: true},
+            {name: 'Greek Yogurt', category: 'Dairy', isHealthy: true}
+
+
+
+        ]
+
+        expect(answer).toEqual(isHealthy)
+        
+
+    
+
 })

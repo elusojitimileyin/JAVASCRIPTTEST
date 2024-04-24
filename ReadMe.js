@@ -56,9 +56,14 @@ function filterAfternoonTime(time) {
 
 
     function mapHealthyAndUnHealthy(array) {
-
+        let heathlyFood = array.filter(food=> food.isHealthy === true)
+        for (const name of heathlyFood){
+            console.log(heathlyFood.name)
+            
+        }
+        return heathlyFood
 
     }
 
-module.exports = {testScoresArray, upGradeScore, squareNumber,shareBooks,davidMonthlyExpenses,scheduleAfternoonClasses} 
+module.exports = {testScoresArray, upGradeScore, squareNumber,shareBooks,davidMonthlyExpenses,scheduleAfternoonClasses,mapHealthyAndUnHealthy} 
 
